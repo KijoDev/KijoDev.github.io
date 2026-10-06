@@ -1,0 +1,341 @@
+/* Dos colores: uno para la cabecera, otro para la zona de blogs */
+:root {
+    --color-cabecera: #17091a;
+    --color-blogs: #261029;
+    --texto: #ffffff;
+    --acento: #e64539; /* el rojo exacto del logo */
+    --acento-suave: #911d55; /* el rojo apagado del logo */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    background: var(--color-blogs);
+    color: var(--texto);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Cabecera */
+header {
+    background: var(--color-cabecera);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 4vw 16px;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* El pixel art mide 74x81 (escalado x5 en el archivo); mostrarlo a x3 exacto evita la distorsión */
+.logo img {
+    width: 222px;
+    height: 243px;
+    image-rendering: pixelated;
+}
+
+/* El título mide 67x18 (escalado x5 en el archivo); x3 para que sus píxeles igualen a los del logo */
+.logo img.titulo {
+    width: 201px;
+    height: 54px;
+}
+
+header { position: relative; }
+
+nav {
+    position: absolute;
+    top: 24px;
+    left: 4vw;
+    display: flex;
+    gap: 16px;
+}
+
+nav a { font-size: 0.9rem; color: var(--acento-suave); }
+nav a.activo { color: var(--acento); }
+
+/* Enlace al feed, en la esquina inferior izquierda de la cabecera */
+.rss {
+    position: absolute;
+    bottom: 16px;
+    left: 4vw;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--acento-suave);
+}
+.rss:hover { color: var(--acento); text-decoration: underline; text-underline-offset: 4px; }
+
+/* Icono clásico de RSS dibujado en CSS */
+.rss::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background:
+        radial-gradient(circle at 0 100%, currentColor 3px, transparent 3.5px),
+        radial-gradient(circle at 0 100%, transparent 6px, currentColor 6.5px, currentColor 8.5px, transparent 9px),
+        radial-gradient(circle at 0 100%, transparent 11.5px, currentColor 12px, currentColor 14px, transparent 14.5px);
+}
+
+/* En pantallas pequeñas el menú pasa debajo del nombre para no tapar el logo */
+/* Iconos de redes, en la esquina inferior derecha de la cabecera.
+   Vienen escalados x3; se muestran a x2 exacto (2/3 del archivo) para que no se deformen */
+.redes {
+    position: absolute;
+    bottom: 16px;
+    right: 4vw;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+.redes img {
+    display: block;
+    height: 36px;
+    width: auto;
+    image-rendering: pixelated;
+    transition: transform 0.15s;
+}
+.redes a:hover img { transform: translateY(-3px); }
+
+@media (max-width: 600px) {
+    nav { position: static; }
+    .redes { position: static; }
+}
+nav a.activo,
+nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Lista de blogs */
+main {
+    flex: 1;
+    width: 100%;
+    padding: 40px 4vw;
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 48px 32px;
+}
+
+.portada {
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(135deg, var(--acento), #3c6fd8);
+    border-radius: 4px 4px 0 0;
+}
+
+.blog-info {
+    background: var(--color-cabecera);
+    padding: 16px;
+    border-radius: 0 0 4px 4px;
+}
+
+.blog time,
+.blog-completo time { font-size: 0.8rem; color: var(--acento); }
+
+.blog h2,
+.blog-completo h1 { color: var(--acento); }
+
+.blog h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 8px 0;
+}
+
+.blog p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--acento-suave);
+    margin: 0;
+}
+
+.blog a:hover h2 { text-decoration: underline; }
+
+/* Blog completo */
+.blog-completo {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.blog-completo h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 8px 0 24px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Pie */
+footer {
+    background: var(--color-cabecera);
+    text-align: center;
+    padding: 16px;
+    font-size: 0.8rem;
+}
+
+footer p { margin: 0; color: var(--acento); }
+
+/* Contacto */
+.contacto { width: 100%; max-width: 400px; margin: 0 auto; }
+
+/* Centra el formulario también en vertical */
+main:has(.contacto) { display: flex; align-items: center; }
+
+.contacto h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--acento);
+    margin: 0 0 24px;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto label { font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; color: var(--acento); }
+.contacto label span { font-weight: 400; opacity: 0.7; }
+
+.contacto input,
+.contacto textarea {
+    font: inherit;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--acento-suave);
+    border-radius: 2px;
+    background: var(--color-cabecera);
+    color: var(--texto);
+    transition: box-shadow 0.15s;
+}
+
+/* Sombra frambuesa al pasar el mouse (y mientras se escribe) */
+.contacto input:hover,
+.contacto textarea:hover,
+.contacto input:focus,
+.contacto textarea:focus {
+    box-shadow: 5px 5px 0 var(--acento-suave);
+    outline: none;
+}
+
+.contacto button {
+    align-self: center;
+    font: inherit;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border: 2px solid var(--acento);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--acento);
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.contacto button:hover { background: var(--texto); border-color: var(--texto); color: var(--color-cabecera); }
+
+/* El mensaje solo se puede agrandar hacia abajo */
+.contacto textarea { resize: vertical; }
+
+/* Games */
+.games { text-align: center; }
+
+.games h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--acento);
+    margin: 0 0 16px;
+}
+
+.games p { color: var(--acento-suave); margin: 0; }
+
+/* Paneles verticales de juegos */
+.juegos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 220px));
+    justify-content: center;
+    gap: 32px;
+}
+
+@media (max-width: 600px) {
+    .juegos { grid-template-columns: minmax(0, 220px); }
+}
+
+.juego {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--acento);
+}
+
+/* Hueco para el cover: cuando lo tengas, pon un <img> dentro de .juego-cover */
+.juego-cover {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cabecera);
+    /* Borde dibujado por fuera para que el cover ocupe 220x330 exactos (1/3 de 660x990) */
+    box-shadow: 0 0 0 1px var(--acento-suave);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.juego-cover img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+
+.icono-textura {
+    width: 56px;
+    height: 56px;
+    fill: none;
+    stroke: var(--acento-suave);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.juego { gap: 4px; }
+.juego-cover { margin-bottom: 8px; }
+
+.juego-estado {
+    font-size: 0.75rem;
+    color: var(--acento-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Personaje bajo el título de contacto, a su tamaño real (mismos píxeles x3 que el logo) */
+.contacto-kijo {
+    display: block;
+    /* La imagen trae 24px transparentes arriba; así el personaje queda a ~16px del título */
+    margin: -32px auto 24px;
+    image-rendering: pixelated;
+}
+
+/* Portada con imagen en las tarjetas del inicio */
+img.portada {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-completo img { max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 6px; }

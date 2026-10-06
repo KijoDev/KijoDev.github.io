@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ojiksoft</title>
+    <link>https://kijodev.github.io/</link>
+    <description>Ojiksoft blog about web and game development.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kijodev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://kijodev.github.io/ojiksoft_logo_final.png</url>
+      <title>Ojiksoft</title>
+      <link>https://kijodev.github.io/</link>
+    </image>
+    <item>
+      <title>Hey! + Projects</title>
+      <link>https://kijodev.github.io/blogs/hey-projects.html</link>
+      <guid isPermaLink="true">https://kijodev.github.io/blogs/hey-projects.html</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Hi! I created this website because the Play Store verification asked me for one. I'd had it in mind for a long time anyway, but I kept putting it off out of laziness haha. Honestly, I don't really know what to write in this blog. I'm still working on CARE, adding meta progression, new items, new units and so on. The game is progressing slowly, but it's moving forward. I have lots of ideas to put in the game: secrets, hidden items, more swords and other cool stuff. This will be my first commercial game (on Steam and Android), so I really want to do it well, and I'll keep taking the time I need to get it done.</description>
+      <content:encoded><![CDATA[<p>Hi! I created this website because the Play Store verification asked me for one. I'd had it in mind for a long time anyway, but I kept putting it off out of laziness haha. Honestly, I don't really know what to write in this blog. I'm still working on CARE, adding meta progression, new items, new units and so on. The game is progressing slowly, but it's moving forward. I have lots of ideas to put in the game: secrets, hidden items, more swords and other cool stuff. This will be my first commercial game (on Steam and Android), so I really want to do it well, and I'll keep taking the time I need to get it done.</p>
+<p>I'm also working on other projects like Chick Chick SMASH! (my first incremental) and Dark Elixir. For DE, I'm working on the cards and the combat design, as well as how the world will behave and its procedural generation. There will be public content about it soon. I don't have much more to say, other than thank you for reading the blog, and maybe a short explanation of why I'm not posting as often on my socials. I know it'll sound silly, but it's because of AI. Lately it hasn't sat well with me knowing that what I post is being used to train AIs on my work, so I decided not to publish several pieces I've made. It's not that I'll never post again, just not as often, or it'll be more private (I mean artworks; I'll keep posting gameplay of my games as usual). With that said, I'll leave some images of things I'm working on for CARE and Dark Elixir. And that's all. I hope you have a good day, afternoon or night. See you!</p>
+<p><img src="../imgs/care_blog_1.png" alt="CARE"></p>
+<p><img src="../imgs/care_blog_2.png" alt="CARE"></p>
+<p><img src="../imgs/care_blog_3.png" alt="CARE"></p>
+<p><img src="../imgs/dark_elixir_1.png" alt="Dark Elixir"></p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

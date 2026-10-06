@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojiksoft</title>
+    <link rel="icon" type="image/png" href="kijo_dev_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="alternate" type="application/rss+xml" title="Ojiksoft RSS" href="feed.xml">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="intro_ojiksoft.gif" alt="Ojiksoft logo" id="logo-animado">
+            <script>
+                // La animación del logo solo se reproduce la primera vez que se visita la página
+                try {
+                    if (localStorage.getItem('logoVisto')) {
+                        document.getElementById('logo-animado').src = 'ojiksoft_logo_final.png';
+                    } else {
+                        localStorage.setItem('logoVisto', '1');
+                    }
+                } catch (e) {}
+            </script>
+            <img src="ojiksoft_tittle.png" alt="Ojiksoft" class="titulo">
+        </a>
+        <nav>
+            <a href="index.html" class="activo">Blog</a>
+            <a href="games.html">Games</a>
+            <a href="contacto.html">Contact</a>
+        </nav>
+        <a href="feed.xml" class="rss" title="Subscribe via RSS">RSS</a>
+        <div class="redes">
+            <a href="https://x.com/Kijo_dev" target="_blank" rel="noopener" title="X"><img src="X_profile.png" alt="X"></a>
+            <a href="https://bsky.app/profile/kijodev.bsky.social" target="_blank" rel="noopener" title="Bluesky"><img src="Bluesky_profile.png" alt="Bluesky"></a>
+            <a href="https://www.tumblr.com/kijodev" target="_blank" rel="noopener" title="Tumblr"><img src="Tumblr_profile.png" alt="Tumblr"></a>
+            <a href="https://ko-fi.com/kijo_dev" target="_blank" rel="noopener" title="Ko-fi"><img src="ko-fi.png" alt="Ko-fi"></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="blogs">
+            <article class="blog">
+                <a href="blogs/hey-projects.html">
+                    <img class="portada" src="portadas/cover_blog_1.png" alt="">
+                    <div class="blog-info">
+                        <time datetime="2026-10-06">2026-10-06</time>
+                        <h2>Hey! + Projects</h2>
+                        <p>Hi! I created this website because the Play Store verification asked me for one. I'd had it in mind for a long time…</p>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ojiksoft. All rights reserved.</p>
+    </footer>
+</body>
+</html>
