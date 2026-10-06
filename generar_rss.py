@@ -11,7 +11,7 @@ from pathlib import Path
 
 # Cambia esto por la dirección real del sitio cuando lo publiques (sin "/" al final)
 SITIO = "https://kijodev.github.io"
-TITULO = "Ojiksoft"
+TITULO = "Ojiksoft Blog"
 DESCRIPCION = "Ojiksoft blog about web and game development."
 
 RAIZ = Path(__file__).parent
