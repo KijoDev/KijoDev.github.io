@@ -1,0 +1,9 @@
+titulo: Título del blog
+fecha: 2026-10-20
+portada:
+---
+Escribe aquí el primer párrafo. Puede ser tan largo como quieras; los saltos de línea dentro de un párrafo se juntan solos.
+
+Deja una línea en blanco para empezar un párrafo nuevo.
+
+Puedes usar <strong>negritas</strong> y enlaces como <a href="https://ko-fi.com/kijo_dev">este</a>.
